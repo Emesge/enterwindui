@@ -1,5 +1,5 @@
 import React from 'react';
-import { EnterWind as Logo, Github } from '../Icons';
+import { EnterWind as Logo, Github } from '../../elements/Icons';
 
 function Navbar(){
   return (

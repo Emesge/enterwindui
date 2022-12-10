@@ -1,6 +1,6 @@
 import React from 'react';
 import Footer from '../../elements/Footer';
-import Navbar from '../../elements/Navbar';
+import Navbar from '../../groups/Navbar';
 import PropTypes from 'prop-types';
 
 export default function BaseLayouts({ children }) {
