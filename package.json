@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "precommit": "npm run lint",
     "lint:watch": "esw src --color --watch",
     "lint": "next lint"
   },
@@ -23,6 +24,7 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-react": "^7.31.11",
     "eslint-watch": "^8.0.0",
+    "husky": "^8.0.2",
     "jest": "^29.3.1",
     "postcss": "^8.4.19",
     "prop-types": "^15.8.1",
