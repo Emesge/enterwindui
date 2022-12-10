@@ -1,5 +1,6 @@
+import React from 'react';
 
-const Logo = () => {
+export default function Logo() {
   return (
     <div className="flex gap-2">
       <div className="flex items-center gap-1">
@@ -10,4 +11,3 @@ const Logo = () => {
   );
 }
 
-export default Logo;
