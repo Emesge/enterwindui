@@ -1,5 +1,4 @@
 import React from 'react';
-import BaseLayouts from '../../layouts/BaseLayouts/BaseLayouts';
 
 export default function Components() {
   return (
