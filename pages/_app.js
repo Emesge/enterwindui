@@ -1,12 +1,24 @@
-import '../styles/globals.css'
-import Layout from '../components/Layout'
+import React from 'react';
+import '../styles/globals.css';
+import BaseLayouts from '../components/layouts/BaseLayouts';
+import PropTypes  from 'prop-types';
 
 const EnterWind = ({ Component, pageProps }) => {
   return (
-    <Layout>
+    <BaseLayouts>
       <Component {...pageProps} />
-    </Layout>
-  )
-}
+    </BaseLayouts>
+  );
+};
 
-export default EnterWind
+export default EnterWind;
+
+EnterWind.defaultProps = {
+  Component: null,
+  pageProps: {},
+};
+
+EnterWind.propTypes = {
+  Component: PropTypes.any,
+  pageProps: PropTypes.object,
+};
