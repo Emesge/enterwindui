@@ -7,7 +7,7 @@ function Navbar(){
       <div className="container flex justify-between px-3 py-3 bg-white lg:py-5">
         <Logo />
         <nav>
-          <a href="https://github.com/rayasabari">
+          <a href="https://github.com/rayasabari/enterwindui">
             <Github size="w-5 h-5" />
           </a>
         </nav>

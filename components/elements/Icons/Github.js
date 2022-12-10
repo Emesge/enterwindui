@@ -23,9 +23,9 @@ export default function GithubIcon({ size }){
 }
 
 GithubIcon.defaultProps = {
-  size: 2,
+  size: 'w-5 h-5',
 };
 
 GithubIcon.propTypes ={
-  size: PropTypes.number
+  size: PropTypes.string
 };
