@@ -30,5 +30,10 @@
     "prop-types": "^15.8.1",
     "react-test-renderer": "^18.2.0",
     "tailwindcss": "^3.2.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run precommit"
+    }
   }
 }
