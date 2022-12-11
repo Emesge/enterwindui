@@ -6,8 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "postbuild": "npm run css",
     "precommit": "npm run lint",
     "lint:watch": "esw src --color --watch",
+    "css": "npx tailwindcss -i styles/tailwind.css -o public/tailwind.css -m",
     "lint": "next lint"
   },
   "dependencies": {
@@ -16,6 +18,8 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@heroicons/react": "^2.0.13",
+    "@tailwindcss/forms": "^0.5.3",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "autoprefixer": "^10.4.13",
