@@ -5,6 +5,7 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
     './public/**/*.html',
   ],
+  darkMode: 'class',
   plugins: [
     require('@tailwindcss/forms'),
   ],
