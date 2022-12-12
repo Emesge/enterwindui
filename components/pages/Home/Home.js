@@ -5,7 +5,7 @@ export default function Home() {
     <div>
       <section>
         <div
-          className="max-w-screen-xl px-4 py-32 mx-auto lg:flex lg:h-screen lg:items-center"
+          className="max-w-screen-xl px-4 py-32 mx-auto lg:flex lg:min-h-screen lg:items-center"
         >
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-3xl font-extrabold sm:text-5xl">

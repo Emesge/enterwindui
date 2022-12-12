@@ -24,7 +24,7 @@ class MyDocument extends Document {
           }
           rel="stylesheet" />
         </Head>
-        <body className="transition duration-300 font-poppins dark:bg-slate-900 dark:text-slate-100">
+        <body className="transition font-poppins dark:bg-slate-900 dark:text-slate-100">
           <Main />
           <NextScript />
         </body>

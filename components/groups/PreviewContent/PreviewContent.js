@@ -27,21 +27,21 @@ export default function PreviewContent(props) {
   return (
     <Card>
       <div className="flex flex-row justify-between">
-        <div className="flex flex-row w-full items-center">
+        <div className="flex flex-row items-center w-full">
           <Header className="mr-2">{toTitleCase(header)}</Header>
         </div>
-        <div className="flex flex-row justify-end items-center divide-x-2 divide-blue-300">
+        <div className="flex flex-row items-center justify-end divide-x-2 divide-blue-300">
           <div className="flex flex-row items-center pr-3">
             {conditionalCheck(mode === 'view',
-              <EyeIcon className="h-5 w-5 mx-3 hover:text-sky-700" onClick={toggleMode}/>,
-              <CodeBracketIcon className="h-5 w-5 mx-3 hover:text-sky-700" onClick={toggleMode} />
+              <EyeIcon className="w-5 h-5 mx-3 hover:text-sky-700" onClick={toggleMode}/>,
+              <CodeBracketIcon className="w-5 h-5 mx-3 hover:text-sky-700" onClick={toggleMode} />
             )}
-            <ClipboardDocumentIcon className="h-5 w-5 mx-3 hover:text-sky-700" onClick={clipboardCopy}/>
+            <ClipboardDocumentIcon className="w-5 h-5 mx-3 hover:text-sky-700" onClick={clipboardCopy}/>
           </div>
           <div className="flex flex-row items-center pl-3">
-            <DevicePhoneMobileIcon className="h-5 w-5 mx-3 hover:text-sky-700" onClick={clipboardCopy}/>
-            <DeviceTabletIcon className="h-5 w-5 mx-3 hover:text-sky-700" onClick={clipboardCopy}/>
-            <ComputerDesktopIcon className="h-5 w-5 mx-3 hover:text-sky-700" onClick={clipboardCopy}/>
+            <DevicePhoneMobileIcon className="w-5 h-5 mx-3 hover:text-sky-700" onClick={clipboardCopy}/>
+            <DeviceTabletIcon className="w-5 h-5 mx-3 hover:text-sky-700" onClick={clipboardCopy}/>
+            <ComputerDesktopIcon className="w-5 h-5 mx-3 hover:text-sky-700" onClick={clipboardCopy}/>
           </div>
         </div>
       </div>

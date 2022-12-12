@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 export default function BaseLayouts({ children }) {
   return (
-    <div className="min-h-screen">
+    <div className="">
       <Navbar />
       <main>{children}</main>
       <Footer />

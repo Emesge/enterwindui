@@ -27,7 +27,7 @@ function Navbar() {
   });
 
   return (
-    <header className="fixed top-0 left-0 right-0 flex justify-center shadow">
+    <header className="fixed top-0 left-0 right-0 z-10 flex justify-center transition bg-white shadow dark:bg-slate-900">
       <div className="container flex items-center justify-between px-3 py-3 lg:py-5">
         <div className="flex items-center gap-4 lg:gap-10">
           <Logo />
@@ -37,7 +37,7 @@ function Navbar() {
             <Link className="hover:font-medium" href={'/blog'}>Blog</Link>
           </nav>
         </div>
-        <nav className="flex items-center gap-5">
+        <nav className="flex items-center gap-3 md:gap-5">
           <button className="w-6 h-6" onClick={toggleDarkMode} type="button">
             {dark ? <SunIcon className="text-yellow-500" /> : <MoonIcon />}
           </button>
