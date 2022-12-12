@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/globals.css';
+import 'prismjs/themes/prism-okaidia.css';
 import BaseLayouts from '../components/layouts/BaseLayouts';
 import PropTypes  from 'prop-types';
 
