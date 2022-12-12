@@ -4,9 +4,9 @@ export default function Type() {
   return (
     <section>
       <div
-        className="max-w-screen-xl px-4 mx-auto lg:flex lg:h-screen lg:items-start"
+        className="max-w-screen-xl px-4 mx-auto lg:flex lg:min-h-screen lg:items-start bg-emerald-400"
       >
-        <div className="pt-20 w-full" />
+        <div className="w-full pt-20" />
       </div>
     </section>
   );

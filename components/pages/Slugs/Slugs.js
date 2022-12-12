@@ -32,9 +32,9 @@ export default function Slugs(props) {
   return (
     <section>
       <div
-        className="max-w-screen-xl px-4 mx-auto lg:flex lg:h-screen lg:items-start"
+        className="max-w-screen-xl px-4 mx-auto lg:flex lg:min-h-screen lg:items-start"
       >
-        <div className="pt-20 w-full">
+        <div className="w-full pt-20">
           {componentList.map((component, index) =>
             (<PreviewContent component={component}
               header={component.name} key={`component-${index}`}
