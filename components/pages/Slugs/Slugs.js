@@ -1,30 +1,33 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
-import ItemContent from '../../groups/ItemContent';
+import PreviewContent from '../../groups/PreviewContent';
 import { transformComponentHtml } from '../../../utils/format';
+import PropTypes  from 'prop-types';
 
-/* TODO create redirect to 404 if slugs/type is not found */
-export default function Components() {
-  const router = useRouter();
-  const { slugs, type } = router.query;
-  const [html, setHtml ] = useState(null);
+export default function Slugs(props) {
+  const { componentConfig } = props;
+  const [componentList, setComponentList] = useState([]);
 
-  const transformHtml = useCallback(async () => {
-    try {
-      const sampleContainer = 'max-w-sm mx-auto p-8 dark:bg-slate-800';
-      const htmlFile = await fetch(`/components/${type}/${slugs}.html`);
-      const responseText = await htmlFile.text();
-      const renderedHtml = transformComponentHtml(responseText, sampleContainer);
-      setHtml(renderedHtml);
-    } catch(err){
-      router.replace('/');
-    }
-  }, [slugs, router, type]);
+  const transformHtml = useCallback(async (component) => {
+    const htmlFile = await fetch(component);
+    const code = await htmlFile.text();
+    const html = transformComponentHtml(code, componentConfig.container);
+    return { code, html };
+  }, [componentConfig]);
 
+  const prepareContent = useCallback(async () => {
+    const lists = componentConfig.variant.map(async item => {
+      item.content = await transformHtml(item.component, componentConfig.container);
+      return item;
+    });
+
+    const results = await Promise.all(lists);
+    setComponentList(results);
+
+  }, [componentConfig, transformHtml]);
 
   useEffect(() => {
-    transformHtml();
-  }, [transformHtml]);
+    prepareContent();
+  }, [prepareContent]);
 
   return (
     <section>
@@ -32,15 +35,20 @@ export default function Components() {
         className="max-w-screen-xl px-4 mx-auto lg:flex lg:h-screen lg:items-start"
       >
         <div className="pt-20 w-full">
-          <ItemContent header={slugs} >
-            {/* TODO Split Iframe to elements component */}
-            <iframe className="mt-4 h-[200px] w-full rounded-lg bg-white ring-2 ring-black lg:h-[300px] lg:transition-all"
-              key="item"
-              loading="lazy"
-              srcDoc={html}/>
-          </ItemContent>
+          {componentList.map((component, index) =>
+            (<PreviewContent component={component}
+              header={component.name} key={`component-${index}`}
+            />))}
         </div>
       </div>
     </section>
   );
 }
+
+Slugs.defaultProps = {
+  componentConfig : {},
+};
+
+Slugs.propTypes = {
+  componentConfig: PropTypes.object,
+};

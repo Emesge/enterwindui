@@ -1,15 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function Header({ children }) {
+export default function Header({ children, className }) {
   return (
-    <h4 className="font-bold text-lg my-3">{children}</h4>
+    <h4 className={`${className} font-bold text-lg my-3`}>{children}</h4>
   );
 }
 
 Header.propTypes = {
-  children: PropTypes.node
+  children: PropTypes.node,
+  className: PropTypes.string,
 };
 Header.defaultProps = {
-  children: null
+  children: null,
+  className: '',
 };

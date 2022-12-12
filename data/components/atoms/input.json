@@ -1,0 +1,15 @@
+{
+  "container": "max-w-sm mx-auto p-8 dark:bg-slate-800",
+  "name": "input",
+  "type": "atoms",
+  "variant": [
+    {
+      "name": "standard input",
+      "component": "/components/atoms/input.html"
+    },
+    {
+      "name": "label inside input",
+      "component": "/components/atoms/input-label-inside.html"
+    }
+  ]
+}
