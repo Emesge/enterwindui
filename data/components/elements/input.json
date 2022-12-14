@@ -1,0 +1,17 @@
+{
+  "defaultContainer": "max-w-sm mx-auto p-8 dark:bg-slate-800",
+  "name": "input",
+  "type": "elements",
+  "variant": [
+    {
+      "name": "standard input",
+      "component": "/components/elements/input.html",
+      "container": "max-w-sm mx-auto p-8 dark:bg-slate-800"
+    },
+    {
+      "name": "label inside input",
+      "component": "/components/elements/input-label-inside.html",
+      "container": "max-w-sm mx-auto p-8 dark:bg-slate-800"
+    }
+  ]
+}

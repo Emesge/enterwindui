@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Card from '../../elements/Card';
 import PropTypes from 'prop-types';
 import Header from '../../elements/Header';
-import Prism from 'prismjs';
 import { toTitleCase } from '../../../utils/format';
 import { EyeIcon, CodeBracketIcon, ClipboardDocumentIcon, DevicePhoneMobileIcon, DeviceTabletIcon,
   ComputerDesktopIcon } from '@heroicons/react/24/outline';
 import { conditionalCheck } from '../../../utils/helpers';
+import Code from '../../elements/Code';
+import IconButton from '../../elements/IconButton';
+import Iframe from '../../elements/Iframe';
 
 export default function PreviewContent(props) {
   const { header, component } = props;
@@ -20,10 +22,6 @@ export default function PreviewContent(props) {
     alert('Copied');
   };
 
-  useEffect(() => {
-    Prism.highlightAll();
-  });
-
   return (
     <Card>
       <div className="flex flex-row justify-between">
@@ -33,10 +31,16 @@ export default function PreviewContent(props) {
         <div className="flex flex-row items-center justify-end divide-x-2 divide-blue-300">
           <div className="flex flex-row items-center pr-3">
             {conditionalCheck(mode === 'view',
-              <EyeIcon className="w-5 h-5 mx-3 hover:text-sky-700" onClick={toggleMode}/>,
-              <CodeBracketIcon className="w-5 h-5 mx-3 hover:text-sky-700" onClick={toggleMode} />
+              <IconButton icon={
+                <EyeIcon className="w-5 h-5 mx-3 hover:text-sky-700" />
+              } label="View" onClick={toggleMode} position="left" />,
+              <IconButton icon={
+                <CodeBracketIcon className="w-5 h-5 mx-3 hover:text-sky-700"/>
+              } label="Code" onClick={toggleMode} position="left" />
             )}
-            <ClipboardDocumentIcon className="w-5 h-5 mx-3 hover:text-sky-700" onClick={clipboardCopy}/>
+            <IconButton icon={
+              <ClipboardDocumentIcon className="w-5 h-5 mx-3 hover:text-sky-700" onClick={clipboardCopy}/>
+            } label="Copy" onClick={clipboardCopy} position="left" />
           </div>
           <div className="flex flex-row items-center pl-3">
             <DevicePhoneMobileIcon className="w-5 h-5 mx-3 hover:text-sky-700" onClick={clipboardCopy}/>
@@ -48,14 +52,8 @@ export default function PreviewContent(props) {
       <hr/>
       <div className="mt-4">
         {conditionalCheck(mode === 'view',
-          <iframe className="h-[200px] w-full rounded-lg bg-white ring-2
-        ring-black lg:h-[300px] lg:transition-all"
-          key="item"
-          loading="lazy"
-          srcDoc={content.html}/>,
-          <pre className="h-[300px] overflow-auto rounded-lg bg-black p-4 ring-2 ring-black lg:h-[300px]">
-            <code className="language-html">{content.code}</code>
-          </pre>
+          <Iframe source={content.html} />,
+          <Code code={content.code} height={400} languageType="html"/>
         )}
       </div>
     </Card>

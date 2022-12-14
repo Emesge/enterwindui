@@ -9,7 +9,7 @@
     "postbuild": "npm run css",
     "precommit": "npm run lint",
     "lint:watch": "esw src --color --watch",
-    "css": "npx tailwindcss -i styles/tailwind.css -o public/tailwind.css -m",
+    "css": "rm public/tailwind.css && npx tailwindcss -i styles/globals.css -o public/tailwind.css --postcss",
     "lint": "next lint"
   },
   "dependencies": {

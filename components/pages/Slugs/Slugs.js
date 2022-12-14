@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import PreviewContent from '../../groups/PreviewContent';
 import { transformComponentHtml } from '../../../utils/format';
 import PropTypes  from 'prop-types';
+import { conditionalCheck } from '../../../utils/helpers';
 
 export default function Slugs(props) {
   const { componentConfig } = props;
@@ -10,7 +11,8 @@ export default function Slugs(props) {
   const transformHtml = useCallback(async (component) => {
     const htmlFile = await fetch(component);
     const code = await htmlFile.text();
-    const html = transformComponentHtml(code, componentConfig.container);
+    const container = conditionalCheck(component.container, component.container, componentConfig.defaultContainer);
+    const html = transformComponentHtml(code, container);
     return { code, html };
   }, [componentConfig]);
 
