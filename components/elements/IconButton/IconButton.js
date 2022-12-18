@@ -3,7 +3,7 @@ import PropTypes  from 'prop-types';
 
 export default function IconButton({ onClick, size, icon, label, type, position }) {
   return (
-    <button className="flex flex-row mx-2 items-center" onClick={onClick} type={type}>
+    <button className="flex flex-row items-center gap-2 hover:text-pink-400" onClick={onClick} type={type}>
       {position === 'left' && icon}
       <span className={`text-${size}`}>{label}</span>
       {position === 'right' && icon}

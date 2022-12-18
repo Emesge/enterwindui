@@ -4,7 +4,7 @@ import PropTypes  from 'prop-types';
 export default function Card({ children }) {
   return (
     <div
-      className="relative block rounded-xl border border-gray-200 p-8 shadow-sm my-8"
+      className="relative block p-6 bg-white shadow lg:my-8 dark:bg-slate-800 rounded-xl"
     >
       {children}
     </div>

@@ -3,11 +3,10 @@ import PropTypes from 'prop-types';
 
 export default function Iframe({ source }) {
   return (
-    <iframe className="h-auto w-full rounded-lg bg-white ring-2
-  ring-black lg:transition-all"
-    key="item"
-    loading="lazy"
-    srcDoc={source}/>
+    <iframe className="w-full h-auto rounded-lg dark:bg-slate-900 bg-slate-50 lg:transition-all"
+      key="item"
+      loading="lazy"
+      srcDoc={source} />
   );
 }
 
