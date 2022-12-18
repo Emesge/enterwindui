@@ -10,7 +10,7 @@ export default function Home() {
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-3xl font-extrabold sm:text-5xl">
               Free Tailwind Components for
-              <strong className="ml-2 font-extrabold text-sky-400">
+              <strong className="ml-2 font-extrabold text-pink-600">
                 Sat-set
               </strong> Developer
             </h1>
@@ -22,14 +22,16 @@ export default function Home() {
 
             <div className="flex flex-wrap justify-center gap-4 mt-8">
               <a
-                className="block w-full px-12 py-3 text-sm font-medium text-white transition duration-300 rounded-full shadow bg-sky-400 hover:bg-sky-500 focus:outline-none focus:ring active:bg-sky-400 sm:w-auto"
+                // eslint-disable-next-line max-len
+                className="block w-full px-12 py-3 text-sm font-medium text-white uppercase transition duration-300 bg-pink-600 border-2 border-pink-600 shadow rounded-xl hover:border-pink-500 hover:bg-pink-500 focus:outline-none active:bg-pink-400 sm:w-auto focus:ring-pink-700 focus:ring"
                 href="#"
               >
                 Get Started
               </a>
 
               <a
-                className="block w-full px-12 py-3 text-sm font-medium rounded-full shadow text-sky-400 hover:text-sky-500 focus:outline-none focus:ring active:text-sky-400 sm:w-auto"
+                // eslint-disable-next-line max-len
+                className="block w-full px-12 py-3 text-sm font-medium text-pink-400 uppercase transition duration-300 border-2 border-pink-400 shadow rounded-xl hover:text-pink-500 hover:border-2 focus:outline-none focus:ring hover:border-pink-500 active:text-pink-900 sm:w-auto focus:ring-pink-500"
                 href="/about"
               >
                 Learn More

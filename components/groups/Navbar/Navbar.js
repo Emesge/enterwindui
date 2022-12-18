@@ -27,7 +27,7 @@ function Navbar() {
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-10 flex justify-center transition bg-white shadow dark:bg-slate-900">
+    <header className="fixed top-0 left-0 right-0 z-10 flex justify-center transition bg-slate-50 dark:bg-slate-900">
       <div className="container flex items-center justify-between px-4 py-3 lg:py-5">
         <div className="flex items-center gap-4 lg:gap-10">
           <Logo />
@@ -39,7 +39,7 @@ function Navbar() {
             <Link className="hover:font-medium" href={'/blog'}>Blog</Link>
           </nav>
           <button className="w-5 h-5" onClick={toggleDarkMode} type="button">
-            {dark ? <SunIcon className="text-yellow-500" /> : <MoonIcon />}
+            {dark ? <SunIcon className="text-pink-400" /> : <MoonIcon />}
           </button>
           <a href="https://github.com/Emesge/enterwindui">
             <Github size="w-5 h-5 dark:text-slate-50" />

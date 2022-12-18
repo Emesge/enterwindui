@@ -3,8 +3,10 @@ import Card from '../../elements/Card';
 import PropTypes from 'prop-types';
 import Header from '../../elements/Header';
 import { toTitleCase } from '../../../utils/format';
-import { EyeIcon, CodeBracketIcon, ClipboardDocumentIcon, DevicePhoneMobileIcon, DeviceTabletIcon,
-  ComputerDesktopIcon } from '@heroicons/react/24/outline';
+import {
+  EyeIcon, CodeBracketIcon, ClipboardDocumentIcon, DevicePhoneMobileIcon, DeviceTabletIcon,
+  ComputerDesktopIcon
+} from '@heroicons/react/24/outline';
 import { conditionalCheck } from '../../../utils/helpers';
 import Code from '../../elements/Code';
 import IconButton from '../../elements/IconButton';
@@ -15,7 +17,7 @@ export default function PreviewContent(props) {
   const [mode, setMode] = useState('view');
   const { content } = component;
   const toggleMode = () => setMode(m =>
-    conditionalCheck(m === 'view', 'code', 'view') );
+    conditionalCheck(m === 'view', 'code', 'view'));
 
   const clipboardCopy = async () => {
     await navigator.clipboard.writeText(content.code);
@@ -24,36 +26,35 @@ export default function PreviewContent(props) {
 
   return (
     <Card>
-      <div className="flex flex-row justify-between">
-        <div className="flex flex-row items-center w-full">
+      <div className="flex flex-col justify-between lgflex-row">
+        <div className="flex flex-row items-center w-ful">
           <Header className="mr-2">{toTitleCase(header)}</Header>
         </div>
-        <div className="flex flex-row items-center justify-end divide-x-2 divide-blue-300">
-          <div className="flex flex-row items-center pr-3">
+        <div className="flex flex-col text-slate-500 dark:text-slate-400 lg:divide-x-2 lg:flex-row lg:justify-end lg:items-center lgflex-row divide-slate-300 dark:divide-slate-600">
+          <div className="flex flex-row items-center gap-4 pr-4">
             {conditionalCheck(mode === 'view',
               <IconButton icon={
-                <EyeIcon className="w-5 h-5 mx-3 hover:text-sky-700" />
+                <EyeIcon className="w-5 h-5 hover:text-pink-400" />
               } label="View" onClick={toggleMode} position="left" />,
               <IconButton icon={
-                <CodeBracketIcon className="w-5 h-5 mx-3 hover:text-sky-700"/>
+                <CodeBracketIcon className="w-5 h-5 hover:text-pink-400" />
               } label="Code" onClick={toggleMode} position="left" />
             )}
             <IconButton icon={
-              <ClipboardDocumentIcon className="w-5 h-5 mx-3 hover:text-sky-700" onClick={clipboardCopy}/>
+              <ClipboardDocumentIcon className="w-5 h-5 hover:text-pink-400" onClick={clipboardCopy} />
             } label="Copy" onClick={clipboardCopy} position="left" />
           </div>
-          <div className="flex flex-row items-center pl-3">
-            <DevicePhoneMobileIcon className="w-5 h-5 mx-3 hover:text-sky-700" onClick={clipboardCopy}/>
-            <DeviceTabletIcon className="w-5 h-5 mx-3 hover:text-sky-700" onClick={clipboardCopy}/>
-            <ComputerDesktopIcon className="w-5 h-5 mx-3 hover:text-sky-700" onClick={clipboardCopy}/>
+          <div className="flex-row items-center hidden gap-4 pl-4 text-slate- lg:flex">
+            <DevicePhoneMobileIcon className="w-5 h-5 hover:text-pink-400" onClick={clipboardCopy} />
+            <DeviceTabletIcon className="w-5 h-5 hover:text-pink-400" onClick={clipboardCopy} />
+            <ComputerDesktopIcon className="w-5 h-5 hover:text-pink-400" onClick={clipboardCopy} />
           </div>
         </div>
       </div>
-      <hr/>
       <div className="mt-4">
         {conditionalCheck(mode === 'view',
           <Iframe source={content.html} />,
-          <Code code={content.code} height={400} languageType="html"/>
+          <Code code={content.code} height={400} languageType="html" />
         )}
       </div>
     </Card>

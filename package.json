@@ -10,6 +10,8 @@
     "precommit": "npm run lint",
     "lint:watch": "esw src --color --watch",
     "css": "rm public/tailwind.css && npx tailwindcss -i styles/globals.css -o public/tailwind.css --postcss",
+    "watch": "npx tailwindcss -i styles/globals.css -o public/tailwind.css --watch",
+    "prod": "npx tailwindcss -o public/tailwind.css --minify",
     "lint": "next lint"
   },
   "dependencies": {
