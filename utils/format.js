@@ -9,9 +9,11 @@ export const toTitleCase = (str = '') => {
 
 export function transformComponentHtml(
   componentHtml,
-  componentContainer = 'relative'
+  componentContainer = 'relative',
+  theme = 'light'
 ) {
   return `
+  <html class="${theme}">
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         let links = [...document.querySelectorAll('a')]
@@ -24,5 +26,6 @@ export function transformComponentHtml(
     <body class="${componentContainer}">
       ${componentHtml}
     </body>
+    </html>
   `;
 }

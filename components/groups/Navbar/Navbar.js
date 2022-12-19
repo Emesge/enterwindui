@@ -1,16 +1,24 @@
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { EnterWind as Logo, Github } from '../../elements/Icons';
 import { MoonIcon, SunIcon } from '@heroicons/react/24/outline';
+import { ThemeContext } from '../../../context/ThemeContext';
+import { conditionalCheck } from '../../../utils/helpers';
 
 function Navbar() {
   const [dark, setDark] = useState(false);
+  const { setTheme } = useContext(ThemeContext);
   const toggleDarkMode = () => {
+    setTheme('dark');
     const html = document.documentElement.classList;
     localStorage.theme = dark ? 'light' : 'dark';
     dark ? html.remove('dark') : html.add('dark');
     setDark((prev) => !prev);
   };
+
+  useEffect(() => {
+    setTheme(conditionalCheck(dark, 'dark', 'light'));
+  }, [dark, setTheme]);
 
   const checkTheme = () => {
     if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
