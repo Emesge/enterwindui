@@ -4,15 +4,18 @@ import 'prismjs/themes/prism-okaidia.css';
 import BaseLayouts from '../components/layouts/BaseLayouts';
 import PropTypes  from 'prop-types';
 import Head from 'next/head';
+import { Theme } from '../context/ThemeContext';
 
 const EnterWind = ({ Component, pageProps }) => {
   return (
-    <BaseLayouts>
-      <Head>
-        <title>Free Tailwind Components for Sat-set Developer | EnterWindUI</title>
-      </Head>
-      <Component {...pageProps} />
-    </BaseLayouts>
+    <Theme>
+      <BaseLayouts>
+        <Head>
+          <title>Free Tailwind Components for Sat-set Developer | EnterWindUI</title>
+        </Head>
+        <Component {...pageProps} />
+      </BaseLayouts>
+    </Theme>
   );
 };
 

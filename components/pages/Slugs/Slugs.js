@@ -1,10 +1,12 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useState } from 'react';
 import PreviewContent from '../../groups/PreviewContent';
 import { transformComponentHtml } from '../../../utils/format';
 import PropTypes  from 'prop-types';
 import { conditionalCheck } from '../../../utils/helpers';
+import { ThemeContext } from '../../../context/ThemeContext';
 
 export default function Slugs(props) {
+  const { theme } = useContext(ThemeContext);
   const { componentConfig } = props;
   const [componentList, setComponentList] = useState([]);
 
@@ -12,9 +14,9 @@ export default function Slugs(props) {
     const htmlFile = await fetch(component);
     const code = await htmlFile.text();
     const container = conditionalCheck(component.container, component.container, componentConfig.defaultContainer);
-    const html = transformComponentHtml(code, container);
+    const html = transformComponentHtml(code, container, theme);
     return { code, html };
-  }, [componentConfig]);
+  }, [componentConfig, theme]);
 
   const prepareContent = useCallback(async () => {
     const lists = componentConfig.variant.map(async item => {
@@ -29,7 +31,7 @@ export default function Slugs(props) {
 
   useEffect(() => {
     prepareContent();
-  }, [prepareContent]);
+  }, [prepareContent, theme]);
 
   return (
     <section>
