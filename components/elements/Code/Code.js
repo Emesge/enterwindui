@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Prism  from 'prismjs';
+import Prism from 'prismjs';
 import PropTypes from 'prop-types';
 
 export default function Code({ languageType, code, height }) {
@@ -8,7 +8,7 @@ export default function Code({ languageType, code, height }) {
   });
 
   return (
-    <pre className={`h-[${height}px] overflow-auto rounded-lg bg-black p-4 ring-2 ring-black lg:h-[${height}px]`}>
+    <pre className={`h-[${height}px] w-full overflow-auto border border-slate-700 lg:h-[${height}px]`} style={{ margin: '0px' }}>
       <code className={`language-${languageType}`}>{code}</code>
     </pre>
   );

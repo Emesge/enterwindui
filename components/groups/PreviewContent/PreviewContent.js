@@ -26,11 +26,11 @@ export default function PreviewContent(props) {
 
   return (
     <Card>
-      <div className="flex flex-col justify-between lgflex-row">
-        <div className="flex flex-row items-center w-ful">
-          <Header className="mr-2">{toTitleCase(header)}</Header>
+      <div className="flex flex-col justify-between gap-1 lg:flex-row">
+        <div className="flex flex-row items-center w-full">
+          <Header>{toTitleCase(header)}</Header>
         </div>
-        <div className="flex flex-col text-slate-500 dark:text-slate-400 lg:divide-x-2 lg:flex-row lg:justify-end lg:items-center lgflex-row divide-slate-300 dark:divide-slate-600">
+        <div className="flex flex-col lg:text-md text-slate-500 dark:text-slate-400 lg:divide-x-2 lg:flex-row lg:justify-end lg:items-center lgflex-row divide-slate-300 dark:divide-slate-600">
           <div className="flex flex-row items-center gap-4 pr-4">
             {conditionalCheck(mode === 'view',
               <IconButton icon={
@@ -51,7 +51,7 @@ export default function PreviewContent(props) {
           </div>
         </div>
       </div>
-      <div className="mt-4">
+      <div className="flex items-center justify-center rounded-lg shadow-inner bg-slate-50 dark:bg-slate-900">
         {conditionalCheck(mode === 'view',
           <Iframe source={content.html} />,
           <Code code={content.code} height={400} languageType="html" />

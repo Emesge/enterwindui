@@ -10,7 +10,7 @@ export default function Home() {
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-3xl font-extrabold sm:text-5xl">
               Free Tailwind Components for
-              <strong className="ml-2 font-extrabold text-pink-600">
+              <strong className="ml-2 font-extrabold text-pink-600 dark:text-pink-400">
                 Sat-set
               </strong> Developer
             </h1>
@@ -23,7 +23,7 @@ export default function Home() {
             <div className="flex flex-wrap justify-center gap-4 mt-8">
               <a
                 // eslint-disable-next-line max-len
-                className="block w-full px-12 py-3 text-sm font-medium text-white uppercase transition duration-300 bg-pink-600 border-2 border-pink-600 shadow rounded-xl hover:border-pink-500 hover:bg-pink-500 focus:outline-none active:bg-pink-400 sm:w-auto focus:ring-pink-700 focus:ring"
+                className="block w-full px-12 py-3 text-sm font-medium text-white uppercase transition duration-300 bg-pink-600 border-2 border-pink-600 shadow-md dark:border-pink-400 dark:bg-pink-400 hover:shadow-xl rounded-xl hover:border-pink-700 dark:hover:bg-pink-500 dark:hover:border-pink-500 hover:bg-pink-700 focus:outline-none active:bg-pink-400 sm:w-auto focus:ring-pink-700 focus:ring"
                 href="#"
               >
                 Get Started
@@ -31,7 +31,7 @@ export default function Home() {
 
               <a
                 // eslint-disable-next-line max-len
-                className="block w-full px-12 py-3 text-sm font-medium text-pink-400 uppercase transition duration-300 border-2 border-pink-400 shadow rounded-xl hover:text-pink-500 hover:border-2 focus:outline-none focus:ring hover:border-pink-500 active:text-pink-900 sm:w-auto focus:ring-pink-500"
+                className="block w-full px-12 py-3 text-sm font-medium text-pink-400 uppercase transition duration-300 border-2 border-pink-400 shadow-md hover:shadow-xl rounded-xl hover:text-pink-500 hover:border-2 focus:outline-none focus:ring hover:border-pink-500 active:text-pink-900 sm:w-auto focus:ring-pink-500"
                 href="/about"
               >
                 Learn More
