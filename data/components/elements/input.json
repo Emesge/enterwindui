@@ -6,7 +6,7 @@
     {
       "name": "standard input",
       "component": "/components/elements/input.html",
-      "container": ""
+      "container": "max-w-xl py-6 px-2 lg:px-1 lg:p-6"
     },
     {
       "name": "with icon",

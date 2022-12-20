@@ -10,17 +10,17 @@ export default function Slugs(props) {
   const { componentConfig } = props;
   const [componentList, setComponentList] = useState([]);
 
-  const transformHtml = useCallback(async (component) => {
+  const transformHtml = useCallback(async (component, componentContainer) => {
     const htmlFile = await fetch(component);
     const code = await htmlFile.text();
-    const container = conditionalCheck(component.container, component.container, componentConfig.defaultContainer);
+    const container = conditionalCheck(componentContainer, componentContainer, componentConfig.defaultContainer);
     const html = transformComponentHtml(code, container, theme);
     return { code, html };
   }, [componentConfig, theme]);
 
   const prepareContent = useCallback(async () => {
     const lists = componentConfig.variant.map(async item => {
-      item.content = await transformHtml(item.component, componentConfig.container);
+      item.content = await transformHtml(item.component, item.container);
       return item;
     });
 
