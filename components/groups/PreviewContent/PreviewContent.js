@@ -25,33 +25,33 @@ export default function PreviewContent(props) {
   };
 
   return (
-    <Card className="my-2">
-      <div className="flex flex-col justify-between lgflex-row">
-        <div className="flex flex-row items-center w-ful">
-          <Header className="mr-2">{toTitleCase(header)}</Header>
+    <Card>
+      <div className="flex flex-col justify-between gap-1 lg:flex-row">
+        <div className="flex flex-row items-center w-full">
+          <Header>{toTitleCase(header)}</Header>
         </div>
-        <div className="flex flex-col text-slate-500 dark:text-slate-400 lg:divide-x-2 lg:flex-row lg:justify-end lg:items-center lgflex-row divide-slate-300 dark:divide-slate-600">
+        <div className="flex flex-col lg:text-md text-slate-500 dark:text-slate-400 lg:divide-x-2 lg:flex-row lg:justify-end lg:items-center lgflex-row divide-slate-300 dark:divide-slate-600">
           <div className="flex flex-row items-center gap-4 pr-4">
             {conditionalCheck(mode === 'view',
               <IconButton icon={
-                <EyeIcon className="w-5 h-5 hover:text-pink-400" />
+                <EyeIcon className="w-4 h-4 lg:w-5 lg:h-5 hover:text-pink-400" />
               } label="View" onClick={toggleMode} position="left" />,
               <IconButton icon={
-                <CodeBracketIcon className="w-5 h-5 hover:text-pink-400" />
+                <CodeBracketIcon className="w-4 h-4 lg:w-5 lg:h-5 hover:text-pink-400" />
               } label="Code" onClick={toggleMode} position="left" />
             )}
             <IconButton icon={
-              <ClipboardDocumentIcon className="w-5 h-5 hover:text-pink-400" onClick={clipboardCopy} />
+              <ClipboardDocumentIcon className="w-4 h-4 lg:w-5 lg:h-5 hover:text-pink-400" onClick={clipboardCopy} />
             } label="Copy" onClick={clipboardCopy} position="left" />
           </div>
           <div className="flex-row items-center hidden gap-4 pl-4 text-slate- lg:flex">
-            <DevicePhoneMobileIcon className="w-5 h-5 hover:text-pink-400" onClick={clipboardCopy} />
-            <DeviceTabletIcon className="w-5 h-5 hover:text-pink-400" onClick={clipboardCopy} />
-            <ComputerDesktopIcon className="w-5 h-5 hover:text-pink-400" onClick={clipboardCopy} />
+            <DevicePhoneMobileIcon className="w-4 h-4 lg:w-5 lg:h-5 hover:text-pink-400" onClick={clipboardCopy} />
+            <DeviceTabletIcon className="w-4 h-4 lg:w-5 lg:h-5 hover:text-pink-400" onClick={clipboardCopy} />
+            <ComputerDesktopIcon className="w-4 h-4 lg:w-5 lg:h-5 hover:text-pink-400" onClick={clipboardCopy} />
           </div>
         </div>
       </div>
-      <div className="mt-4">
+      <div className="flex items-center justify-center rounded-lg shadow-inner bg-slate-50 dark:bg-slate-900">
         {conditionalCheck(mode === 'view',
           <Iframe source={content.html} />,
           <Code code={content.code} height={400} languageType="html" />

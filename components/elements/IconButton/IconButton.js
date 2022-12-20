@@ -25,6 +25,6 @@ IconButton.defaultProps = {
   label: '',
   onClick: () => {},
   position: 'right',
-  size: 'sm',
+  size: 'xs',
   type: 'button'
 };

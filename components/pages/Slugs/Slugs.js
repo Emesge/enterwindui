@@ -34,11 +34,11 @@ export default function Slugs(props) {
   }, [prepareContent, theme]);
 
   return (
-    <section>
+    <section className="flex justify-center">
       <div
-        className="max-w-screen-xl px-4 mx-auto lg:flex lg:min-h-screen lg:items-start"
+        className="container px-4 pt-16 lg:pt-24 lg:flex lg:min-h-screen lg:items-start"
       >
-        <div className="w-full pt-20">
+        <div className="flex flex-col w-full gap-5 lg:gap-6 ">
           {componentList.map((component, index) =>
             (<PreviewContent component={component}
               header={component.name} key={`component-${index}`}

@@ -1,0 +1,38 @@
+<!--
+  This component uses @tailwindcss/forms
+
+  yarn add @tailwindcss/forms
+  npm install @tailwindcss/forms
+
+  plugins: [require('@tailwindcss/forms')]
+-->
+
+<div class="flex flex-col gap-6">
+
+  <div class="relative">
+    <input type="password" placeholder="Password"
+      class="w-full py-3 pl-3 pr-12 text-xl font-extrabold transition duration-300 bg-white border-2 rounded-xl focus:outline-none focus:border-pink-300 focus:ring dark:focus:ring-pink-300 focus:ring-pink-200 text-slate-500 placeholder:text-xl dark:text-slate-200 placeholder:text-slate-400 placeholder:font-normal dark:placeholder:text-slate-400 border-slate-300 dark:bg-slate-600 dark:border-slate-500 dark:ring-slate-400" />
+
+    <span class="absolute inset-y-0 right-0 grid w-10 pr-3 text-pink-400 pointer-events-none dark:text-pink-400 place-content-center">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.242 4.242L9.88 9.88" />
+      </svg>
+    </span>
+  </div>
+
+
+  <div class="relative">
+    <input type="password" placeholder="Password"
+      class="w-full py-3 pl-12 pr-12 text-xl font-extrabold transition duration-300 bg-white border-2 peer rounded-xl focus:outline-none focus:border-pink-300 focus:ring dark:focus:ring-pink-300 focus:ring-pink-200 text-slate-500 placeholder:text-xl dark:text-slate-200 placeholder:text-slate-400 placeholder:font-normal dark:placeholder:text-slate-400 border-slate-300 dark:bg-slate-600 dark:border-slate-500 dark:ring-slate-400" />
+
+    <span
+      class="absolute inset-y-0 left-0 grid w-10 px-3 text-pink-400 transition duration-300 border-t-2 border-b-2 border-l-2 pointer-events-none dark:peer-focus:border-slate-500 dark:bg-slate-600 dark:border-slate-500 peer-focus:border-pink-300 border-slate-300 bg-slate-50 rounded-l-xl dark:text-pink-400 place-content-center">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+      </svg>
+
+    </span>
+  </div>
+</div>

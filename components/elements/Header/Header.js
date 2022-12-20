@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export default function Header({ children, className }) {
   return (
-    <h4 className={`${className} font-medium text-lg`}>{children}</h4>
+    <h4 className={`${className} font-medium lg:text-lg`}>{children}</h4>
   );
 }
 
