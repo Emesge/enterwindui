@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes  from 'prop-types';
 
-export default function Card({ children }) {
+export default function Card({ children, className, onClick }) {
   return (
     <div
-      className="relative block p-6 bg-white shadow lg:my-8 dark:bg-slate-800 rounded-xl"
+      className={`relative block p-6 bg-white shadow dark:bg-slate-800 rounded-xl ${className} `}
+      onClick={onClick}
     >
       {children}
     </div>
@@ -13,8 +14,12 @@ export default function Card({ children }) {
 }
 
 Card.propTypes = {
-  children: PropTypes.node
+  children: PropTypes.node,
+  className: PropTypes.string,
+  onClick: PropTypes.func
 };
 Card.defaultProps = {
-  children: null
+  children: null,
+  className: 'my-6',
+  onClick: () => {}
 };
