@@ -34,20 +34,20 @@ export default function PreviewContent(props) {
           <div className="flex flex-row items-center gap-4 pr-4">
             {conditionalCheck(mode === 'view',
               <IconButton icon={
-                <EyeIcon className="w-5 h-5 hover:text-pink-400" />
+                <EyeIcon className="w-4 h-4 lg:w-5 lg:h-5 hover:text-pink-400" />
               } label="View" onClick={toggleMode} position="left" />,
               <IconButton icon={
-                <CodeBracketIcon className="w-5 h-5 hover:text-pink-400" />
+                <CodeBracketIcon className="w-4 h-4 lg:w-5 lg:h-5 hover:text-pink-400" />
               } label="Code" onClick={toggleMode} position="left" />
             )}
             <IconButton icon={
-              <ClipboardDocumentIcon className="w-5 h-5 hover:text-pink-400" onClick={clipboardCopy} />
+              <ClipboardDocumentIcon className="w-4 h-4 lg:w-5 lg:h-5 hover:text-pink-400" onClick={clipboardCopy} />
             } label="Copy" onClick={clipboardCopy} position="left" />
           </div>
           <div className="flex-row items-center hidden gap-4 pl-4 text-slate- lg:flex">
-            <DevicePhoneMobileIcon className="w-5 h-5 hover:text-pink-400" onClick={clipboardCopy} />
-            <DeviceTabletIcon className="w-5 h-5 hover:text-pink-400" onClick={clipboardCopy} />
-            <ComputerDesktopIcon className="w-5 h-5 hover:text-pink-400" onClick={clipboardCopy} />
+            <DevicePhoneMobileIcon className="w-4 h-4 lg:w-5 lg:h-5 hover:text-pink-400" onClick={clipboardCopy} />
+            <DeviceTabletIcon className="w-4 h-4 lg:w-5 lg:h-5 hover:text-pink-400" onClick={clipboardCopy} />
+            <ComputerDesktopIcon className="w-4 h-4 lg:w-5 lg:h-5 hover:text-pink-400" onClick={clipboardCopy} />
           </div>
         </div>
       </div>

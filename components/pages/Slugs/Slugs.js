@@ -36,7 +36,7 @@ export default function Slugs(props) {
   return (
     <section className="flex justify-center">
       <div
-        className="container px-4 pt-16 lg:pt-20 lg:flex lg:min-h-screen lg:items-start"
+        className="container px-4 pt-16 lg:pt-24 lg:flex lg:min-h-screen lg:items-start"
       >
         <div className="flex flex-col w-full gap-5 lg:gap-6 ">
           {componentList.map((component, index) =>

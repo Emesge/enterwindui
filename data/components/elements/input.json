@@ -9,8 +9,8 @@
       "container": ""
     },
     {
-      "name": "label inside input",
-      "component": "/components/elements/input-label-inside.html",
+      "name": "with icon",
+      "component": "/components/elements/input-with-icon.html",
       "container": ""
     }
   ]
