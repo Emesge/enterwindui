@@ -4,6 +4,7 @@ import { join } from 'path';
 const typeDirectory = join(process.cwd(), '/data/components');
 const slugDirectory = (type) => join(process.cwd(), `/data/components/${type}`);
 const slugFiles = (type, slug) => join(process.cwd(), `/data/components/${type}/${slug}.json`);
+const typeFiles = (type) => join(process.cwd(), `/data/components/${type}/index.json`);
 
 export const getComponentType = () => {
   return fs.readdirSync(typeDirectory);
@@ -29,17 +30,30 @@ export const getSlugConfig =  ({ type, slugs }) => {
   }
 };
 
+export const getTypeConfig = ({ type }) => {
+  try {
+    const filePath = typeFiles(type);
+    const fileRaw = fs.readFileSync(filePath);
+    const config = JSON.parse(fileRaw);
+    return config;
+  } catch(err) {
+    return false;
+  }
+};
+
 export const getSlugsPaths = () => {
   const types = getComponentType();
   const paths = [];
   types.forEach(type => {
     getComponentSlugPathByType(type).forEach(slugs => {
-      paths.push({
-        params: {
-          slugs,
-          type,
-        }
-      });
+      if(slugs !== 'index'){
+        paths.push({
+          params: {
+            slugs,
+            type,
+          }
+        });
+      }
     });
   });
   types.map(type => getComponentSlugPathByType(type));

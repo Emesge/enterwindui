@@ -25,7 +25,7 @@ export default function PreviewContent(props) {
   };
 
   return (
-    <Card>
+    <Card className="my-2">
       <div className="flex flex-col justify-between lgflex-row">
         <div className="flex flex-row items-center w-ful">
           <Header className="mr-2">{toTitleCase(header)}</Header>

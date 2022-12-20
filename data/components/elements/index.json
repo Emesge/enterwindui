@@ -1,0 +1,42 @@
+{
+  "name": "Elements Component",
+  "description": "Smallest component",
+  "url": "components/elements",
+  "children": [
+    {
+      "name": "Input",
+      "url": "elements/input",
+      "description": "Input Component"
+    },
+    {
+      "name": "Input",
+      "url": "elements/input",
+      "description": "Input Component"
+    },
+    {
+      "name": "Input",
+      "url": "elements/input",
+      "description": "Input Component"
+    },
+    {
+      "name": "Input",
+      "url": "elements/input",
+      "description": "Input Component"
+    },
+    {
+      "name": "Input",
+      "url": "elements/input",
+      "description": "Input Component"
+    },
+    {
+      "name": "Input",
+      "url": "elements/input",
+      "description": "Input Component"
+    },
+    {
+      "name": "Input",
+      "url": "elements/input",
+      "description": "Input Component"
+    }
+  ]
+}

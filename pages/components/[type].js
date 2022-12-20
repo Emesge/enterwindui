@@ -1,11 +1,11 @@
 import Type from '../../components/pages/Type';
-import { getTypePaths } from '../../utils/components';
+import { getTypeConfig, getTypePaths } from '../../utils/components';
 export default Type;
 
-
-export function getStaticProps() {
+export function getStaticProps({ params }) {
+  const componentConfig = getTypeConfig(params);
   return {
-    props: {  }
+    props: { componentConfig }
   };
 }
 
