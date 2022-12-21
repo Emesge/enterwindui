@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { conditionalCheck } from '../utils/helpers';
 
 export const ThemeContext = React.createContext({
   setTheme: () => {},
